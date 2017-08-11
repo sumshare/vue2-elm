@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<transition name="router-fade" mode="out-in">
+		<!-- 组件缓存技术，配合路由元信息keepAlive -->
 			<keep-alive>
 			    <router-view v-if="$route.meta.keepAlive"></router-view>
 			</keep-alive>
