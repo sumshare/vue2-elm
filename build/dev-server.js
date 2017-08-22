@@ -45,6 +45,13 @@ var options = {
     target: proxypath,
     changeOrigin: true,
 }
+// 有必要说明一下代理插件的用法
+// 有多种，其中
+// proxy('/api', {...}) - matches paths starting with /api
+// multiple path matching
+// proxy(['/api', '/ajax', '/someotherpath'], {...})
+// 这里用的就是多路径匹配
+// 对匹配到的做代理
 if (context.length) {
     server.use(proxyMiddleware(context, options))
 }
