@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<transition name="router-fade" mode="out-in">
-		<!-- 组件缓存技术，配合路由元信息keepAlive -->
+			<!-- keep-alive是Vue组件缓存技术，配合路由元信息keepAlive -->
+			<!-- msite 只有这个做了keepAlive -->
+			<!-- 并且在路由的钩子函数针对keepAlive==true的路径还配置了记录滚动位置 -->
+			<!-- 注： 这里可能是作者对缓存技术的小小尝试 -->
 			<keep-alive>
 			    <router-view v-if="$route.meta.keepAlive"></router-view>
 			</keep-alive>
